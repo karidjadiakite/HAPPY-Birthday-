@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -37,9 +38,10 @@ class MainActivity : ComponentActivity() {
                 {
 
                         GreetingImage(
-                            "HAPPY Birthday Kady !",
-                            from = "from Diakité",
-                            modifier = Modifier.padding(16.dp)
+                            stringResource(R.string.happy_birthday_text),
+                            from = stringResource(R.string.signature_text),
+                            modifier = Modifier.padding(16.dp),
+                            
                         )
 
 
@@ -53,6 +55,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column (
         verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier=modifier.padding(8.dp)
     )
     {
@@ -67,8 +70,9 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             text = from,
             fontSize = 36.sp,
             modifier=Modifier
-            .padding(16.dp)
-            .align( alignment = Alignment.End)
+                .padding(16.dp)
+                .align(alignment = Alignment.End)
+                
 
 
 
@@ -105,8 +109,8 @@ fun BirthdayCardPreview() {
         )
         {
         GreetingText(
-            "HAPPY Birthday Kady !",
-            from = "from Diakité"
+            stringResource(R.string.happy_birthday_text),
+            from = stringResource(R.string.signature_text),
         )
 
 }
